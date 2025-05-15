@@ -1,0 +1,60 @@
+class RadioPlayer{
+
+    private boolean onOff;
+    private double[] stationList;
+    private int volume;
+    private double station;
+
+    public RadioPlayer(double[] stationList) {
+        this.stationList = stationList;
+        this.volume = 0;
+        this.onOff = false;
+        this.station = 0.0;
+    }
+
+    public void start() {
+        if (onOff == false) {
+            this.onOff = true;
+            this.stationList[0] = station;
+        }
+    }
+
+    public void stop() {
+        if (onOff == true) {
+            this.onOff = false;
+            this.station = 0;
+        }
+    }
+
+    public boolean getOnOff() {
+        return this.onOff;
+    }
+
+    public void volumeUp() {
+        this.volume = this.volume + 2;
+    }
+
+    public void volumeDown() {
+        this.volume = this.volume - 2;
+    }
+
+    public int getVolume() {
+        return this.volume;
+    }
+
+    public void next() {
+        for (i = 0; i < stationList.length() - 1, i++) {
+            this.stationList[i+1] = station;
+        }
+    }
+
+    public previous() {
+        for (i = stationList.length() - 1; i >= 0, i--) {
+            this.stationList[i-1] = station;
+        }
+    }
+
+    public double getStation() {
+        return this.station;
+    }
+}
