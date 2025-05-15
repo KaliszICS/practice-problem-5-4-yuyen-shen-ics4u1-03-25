@@ -1,7 +1,7 @@
 class Rectangle implements Shape, Transformable {
 
-	int x = 0;
-	int y = 0;
+	public int x = 0;
+	public int y = 0;
 
 	public double length;
 	public double width;

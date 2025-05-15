@@ -1,7 +1,7 @@
 interface Shape {
 	
 	//No instance variables unless they are constants.
-	// final int MAXIMUM_NUM = 5;
+	final int MAXIMUM_NUM = 5;
 
 	//No constructor
 
