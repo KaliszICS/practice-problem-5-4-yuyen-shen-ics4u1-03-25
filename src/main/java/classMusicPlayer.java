@@ -1,28 +1,30 @@
-class MusicPlayer {
+class MusicPlayer implements Player{
 
     private boolean onOff;
     private String[] musicList;
     private String currentSong;
     private int volume;
+    private int index;
 
     public MusicPlayer (String[] musicList) {
         this.musicList = musicList;
         this.volume = 0;
         this.onOff = false;
         this.currentSong = "";
+        this.index = 0;
     }
 
     public void start() {
         if (onOff == false) {
             this.onOff = true;
-            this.mucisList[0] = currentSong;
+            currentSong = musicList[0];
         }
     }
 
     public void stop() {
         if (onOff == true) {
             this.onOff = false;
-            this.curretSong = "";
+            this.currentSong = "";
         }
     }
 
@@ -43,15 +45,13 @@ class MusicPlayer {
     }
 
     public void next() {
-        for (i = 0; i < musicList.length() - 1, i++) {
-            this.musicList[i+1] = currentSong;
-        }
+        index++;
+        currentSong = musicList[index];
     }
 
-    public previous() {
-        for (i = musicList.length() - 1; i >= 0, i--) {
-            this.musicList[i-1] = currentSong;
-        }
+    public void previous() {
+        index--;
+        currentSong = musicList[index];
     }
 
     public String getCurrentSong() {

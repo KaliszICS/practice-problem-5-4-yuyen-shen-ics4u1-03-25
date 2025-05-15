@@ -1,11 +1,11 @@
-class VideoPlayer {
+class VideoPlayer implements Player{
 
     private boolean onOff;
-    private String[] video;
+    private String video;
     private int volume;
     private int currentTime;
 
-    public RadioPlayer(String video) {
+    public VideoPlayer(String video) {
         this.video = video;
         this.volume = 0;
         this.onOff = false;
@@ -44,7 +44,7 @@ class VideoPlayer {
         this.currentTime = this.currentTime + 5;
     }
 
-    public rewind() {
+    public void rewind() {
         this.currentTime = this.currentTime - 5;
     }
 

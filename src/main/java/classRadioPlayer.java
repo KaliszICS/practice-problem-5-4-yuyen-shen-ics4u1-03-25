@@ -1,21 +1,23 @@
-class RadioPlayer{
+class RadioPlayer implements Player{
 
     private boolean onOff;
     private double[] stationList;
     private int volume;
     private double station;
+    private int index;
 
     public RadioPlayer(double[] stationList) {
         this.stationList = stationList;
         this.volume = 0;
         this.onOff = false;
         this.station = 0.0;
+        this.index = 0;
     }
 
     public void start() {
         if (onOff == false) {
             this.onOff = true;
-            this.stationList[0] = station;
+            this.station =  this.stationList[0];
         }
     }
 
@@ -43,15 +45,13 @@ class RadioPlayer{
     }
 
     public void next() {
-        for (i = 0; i < stationList.length() - 1, i++) {
-            this.stationList[i+1] = station;
-        }
+        index++;
+        station = stationList[index];
     }
 
-    public previous() {
-        for (i = stationList.length() - 1; i >= 0, i--) {
-            this.stationList[i-1] = station;
-        }
+    public void previous() {
+        index--;
+        station = stationList[index];
     }
 
     public double getStation() {
